@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AndroidKotlinProject</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">ApplicationId</string>
+    <string name="back4app_client_key">ClientKey</string>
+    <string name="back4app_gcm_sender_id">GCMSenderId</string>
+
+    <color name="Black">#000000</color>
+</resources>
