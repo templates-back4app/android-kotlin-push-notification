@@ -4,4 +4,5 @@ In this repository you will find an example app with Live Query working. Be awar
 
 ### Step 1 - Insert App keys
 
-Don't forget to paste your Back4App App ID and Client Key in the [strings.xml](https://github.com/templates-back4app/android-kotlin-push-notification/blob/master/app/src/main/res/values/strings.xml) file.
+Don't forget to paste your Back4App App ID and Client Key in the [strings.xml](https://github.com/nataliaconde/android-kotlin-push-notification/blob/master/app/src/main/res/values/strings.xml) file.
+
