@@ -1,28 +1,51 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.android.application'
 
-buildscript {
-    ext.kotlin_version = '1.2.50'
-    repositories {
-        google()
-        jcenter()
+apply plugin: 'com.google.gms.google-services'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 32
+    defaultConfig {
+        applicationId "com.android.application"
+        minSdkVersion 26
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.gms:google-services:4.0.2'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
+repositories {
+    mavenCentral()
+    jcenter()
+    maven { url 'https://jitpack.io' }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // Don't forget to change the line below with the latest version of Parse SDK for Android
+    implementation "com.github.parse-community.Parse-SDK-Android:parse:3.0.1"
+    implementation "com.github.parse-community.Parse-SDK-Android:fcm:3.0.1"
+
+    implementation 'com.parse.bolts:bolts-android:1.4.0'
+    implementation 'com.google.firebase:firebase-core:21.0.0'
+    implementation 'com.google.firebase:firebase-messaging:23.0.6'
+
 }
